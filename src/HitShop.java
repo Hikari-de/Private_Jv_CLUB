@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class HitShop {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        final double SHIPPING_FEE = 20000;
+        final double VAT_RATE = 0.10;
         System.out.print("Product Name: ");
         String productName = sc.nextLine();
 
@@ -32,7 +33,7 @@ public class HitShop {
             return;
         }
 
-        double total = unitPrice * quantity;
+        double total = (unitPrice * quantity) + (unitPrice * quantity * VAT_RATE) + SHIPPING_FEE;
 
         System.out.println("\n--- Information Bill ---");
         System.out.println("Product Name: " + productName);
